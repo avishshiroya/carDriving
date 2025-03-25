@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://bcjb5vxc3u2nh"]
+
+[ext_resource type="Texture2D" uid="uid://kgb6cc0g0qrm" path="res://assets/Left.png" id="1_06lh1"]
+[ext_resource type="Script" uid="uid://bfa3a1uwf5lpr" path="res://car.gd" id="1_td361"]
+[ext_resource type="Texture2D" uid="uid://bpfbmo4twlsk4" path="res://assets/Right.png" id="2_td361"]
+[ext_resource type="Texture2D" uid="uid://bwj1g2xg8njcy" path="res://assets/Bottom.png" id="3_72krn"]
+[ext_resource type="Script" uid="uid://bgyfe8yr8mcic" path="res://left.gd" id="4_u5era"]
+[ext_resource type="Texture2D" uid="uid://cnsq4cts7es8l" path="res://assets/Top.png" id="4_v0hk8"]
+[ext_resource type="Script" uid="uid://wdyxohsmmb58" path="res://right.gd" id="6_uhg3g"]
+[ext_resource type="Script" uid="uid://bn1ifb0tcnmh1" path="res://bottom.gd" id="8_2s4w4"]
+[ext_resource type="Texture2D" uid="uid://cf5jewvh5th1j" path="res://assets/Car_1_01.png" id="8_mjudg"]
+[ext_resource type="Script" uid="uid://b6fr424eh28vv" path="res://top.gd" id="10_6urck"]
+[ext_resource type="PackedScene" uid="uid://cg386q2s3xwxf" path="res://main.tscn" id="13_2s4w4"]
+
+[node name="car" type="Node2D"]
+script = ExtResource("1_td361")
+
+[node name="Main" parent="." instance=ExtResource("13_2s4w4")]
+position = Vector2(0, 3)
+
+[node name="Left" type="Sprite2D" parent="."]
+position = Vector2(98, 569)
+scale = Vector2(0.396296, 0.448)
+texture = ExtResource("1_06lh1")
+script = ExtResource("4_u5era")
+
+[node name="Button" type="Button" parent="Left"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = -0.337
+anchor_top = -1.023
+anchor_right = -0.337
+anchor_bottom = -1.023
+offset_left = -15.505
+offset_top = 130.75
+offset_right = 151.495
+offset_bottom = 373.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Right" type="Sprite2D" parent="."]
+position = Vector2(200, 569)
+scale = Vector2(0.338889, 0.462)
+texture = ExtResource("2_td361")
+script = ExtResource("6_uhg3g")
+
+[node name="Button" type="Button" parent="Right"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -71.0
+offset_top = -123.0
+offset_right = 65.0
+offset_bottom = 110.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Bottom" type="Sprite2D" parent="."]
+position = Vector2(1014, 603)
+scale = Vector2(0.408, 0.351852)
+texture = ExtResource("3_72krn")
+script = ExtResource("8_2s4w4")
+
+[node name="Button" type="Button" parent="Bottom"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -125.0
+offset_top = -80.0
+offset_right = 132.0
+offset_bottom = 68.0
+
+[node name="Top" type="Sprite2D" parent="."]
+position = Vector2(1020, 525)
+scale = Vector2(0.414, 0.431481)
+texture = ExtResource("4_v0hk8")
+script = ExtResource("10_6urck")
+
+[node name="Button" type="Button" parent="Top"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -123.0
+offset_top = -63.0
+offset_right = 111.0
+offset_bottom = 67.0
+
+[node name="Car101" type="Sprite2D" parent="."]
+position = Vector2(562, 526)
+scale = Vector2(0.147898, 0.15096)
+texture = ExtResource("8_mjudg")
+
+[connection signal="button_down" from="Left/Button" to="Left" method="_on_button_button_down"]
+[connection signal="button_up" from="Left/Button" to="Left" method="_on_button_button_up"]
+[connection signal="button_down" from="Right/Button" to="Right" method="_on_button_button_down"]
+[connection signal="button_up" from="Right/Button" to="Right" method="_on_button_button_up"]
+[connection signal="button_down" from="Bottom/Button" to="Bottom" method="_on_button_button_down"]
+[connection signal="button_up" from="Bottom/Button" to="Bottom" method="_on_button_button_up"]
+[connection signal="button_down" from="Top/Button" to="Top" method="_on_button_button_down"]
+[connection signal="button_up" from="Top/Button" to="Top" method="_on_button_button_up"]
