@@ -16,17 +16,26 @@ script = ExtResource("1_h2yge")
 motion_mirroring = Vector2(0, 100)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/grass"]
-texture_filter = 1
-position = Vector2(573.5, 320.5)
-scale = Vector2(2.24805, 1.24805)
+position = Vector2(633, 316.251)
+scale = Vector2(2.48047, 1.91504)
 texture = ExtResource("1_ig7tw")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(0, 100)
+motion_mirroring = Vector2(0, 320)
 script = ExtResource("3_1bvp3")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(553.538, 323.539)
+position = Vector2(605, -218)
 rotation = 1.5708
-scale = Vector2(1.25881, 1.06851)
+scale = Vector2(0.665023, 1.08383)
+texture = ExtResource("2_0xm2m")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 320)
+script = ExtResource("3_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(605, 514)
+rotation = 1.5708
+scale = Vector2(0.984175, 1.08383)
 texture = ExtResource("2_0xm2m")
