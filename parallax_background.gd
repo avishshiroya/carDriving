@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
-@export var scroll_speed := 300  # Adjust scrolling speed
-@export var screen_height := 600  # Set this to your screen or texture height
+@export var scroll_speed := 500  # Adjust scrolling speed
+@export var screen_height := 720  # Set this to your screen or texture height
 
 var forward := false
 var reverse := false
@@ -19,9 +19,9 @@ func _process(delta: float) -> void:
 func check_and_reset(layer: ParallaxLayer) -> void:
 	# Ensure seamless wrapping by checking when the layer is fully out of view
 	if layer.motion_offset.y >= screen_height:
-		layer.motion_offset.y -= screen_height * 2  # Move to the back
+		layer.motion_offset.y -= screen_height * 3  # Move to the back
 	elif layer.motion_offset.y <= -screen_height:
-		layer.motion_offset.y += screen_height * 2  # Move to the front
+		layer.motion_offset.y += screen_height * 3  # Move to the front
 
 func start_scrolling() -> void:
 	forward = true
